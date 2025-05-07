@@ -1,0 +1,182 @@
+/* Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    position: relative;
+    /* Positioning container for absolute positioning of nav */
+    padding: 10px 20px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Navigation - Positioning links to the right */
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    position: absolute;
+    /* Positioning it over the logo */
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Vertically center the nav items */
+    margin: 0;
+    /* Remove default margin */
+}
+
+nav ul li {
+    padding: 10px 20px;
+    /* Equal padding on top and bottom */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: rgb(79, 72, 72);
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Form Styling */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+form label[for="policy"] {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8em;
+    color: gray;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background-color: rgb(79, 72, 72);
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+        /* Hide the hamburger icon on desktop */
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+        /* Ensure the menu starts off-screen */
+        height: 100vh;
+        width: 200px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out;
+        /* Use transform for smooth sliding */
+        z-index: 1000;
+        padding-top: 50px;
+        /* Space for the hamburger icon */
+    }
+
+    nav ul li {
+        margin: 20px 0;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    nav ul li a {
+        color: #333;
+        font-weight: bold;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    nav ul li a:hover {
+        color: rgb(79, 72, 72);
+        background-color: #f0f0f0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Slide the menu in by changing transform */
+    nav ul.show {
+        transform: translateX(0);
+    }
+}
