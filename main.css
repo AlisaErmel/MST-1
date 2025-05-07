@@ -13,6 +13,25 @@ body {
     line-height: 1.6;
 }
 
+/* Make sections take up full screen height */
+.descr,
+.form-section {
+    height: 100vh;
+    /* 100% of the viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    scroll-snap-align: start;
+    /* Optional: for smooth scrolling effect */
+}
+
+/* Optional smooth scroll for nicer UX */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Header */
 header {
     background-color: #fff;
@@ -124,13 +143,71 @@ form button:hover {
     background-color: rgb(79, 72, 72);
 }
 
+/* Description Section Layout */
+.descr {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    /* Space between text and image */
+    text-align: left;
+    /* Keep text left-aligned */
+    padding: 0 40px;
+    flex-direction: column;
+    /* Default to vertical stacking for small screens */
+}
+
+/* Title and List Styling */
+.descr h1,
+.descr h2 {
+    margin-bottom: 15px;
+}
+
+/* List Styling */
+.descr ul {
+    margin-top: 15px;
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* Image Styling */
+.descr img {
+    width: 600px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.descr img:hover {
+    transform: scale(1.05);
+}
+
 /* Desktop Styles */
 @media (min-width: 768px) {
-    .hamburger {
-        display: none;
-        /* Hide the hamburger icon on desktop */
+    .descr {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .descr img {
+        width: 50%;
+        height: 100%;
+        /* Full viewport height */
+        object-fit: cover;
+        /* Ensure it covers without distortion */
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .descr img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7);
     }
 }
+
 
 /* Mobile Styles */
 @media (max-width: 768px) {
@@ -179,5 +256,19 @@ form button:hover {
     /* Slide the menu in by changing transform */
     nav ul.show {
         transform: translateX(0);
+    }
+
+    .descr {
+        flex-direction: column;
+        /* Stack text and image vertically on mobile */
+        text-align: center;
+        /* Center-align text on mobile */
+    }
+
+    .descr img {
+        width: 300px;
+        /* Smaller image size for mobile */
+        margin-top: 20px;
+        /* Add space above image */
     }
 }
