@@ -18,16 +18,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (hamburger && mobileMenu) {
         hamburger.addEventListener('click', function (e) {
-            e.stopPropagation();  // Prevent the click event from propagating to the document
-            mobileMenu.classList.toggle('show');  // Toggle the "show" class
+            e.stopPropagation();
+            mobileMenu.classList.toggle('show');
         });
 
-        // Close the menu when clicking anywhere outside
         document.addEventListener('click', function (e) {
-            // Check if the click was outside the menu and hamburger
             if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-                mobileMenu.classList.remove('show');  // Close the menu
+                mobileMenu.classList.remove('show');
             }
         });
     }
+
+    // Sticky Header on Scroll
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    });
 });

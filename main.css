@@ -13,6 +13,12 @@ body {
     line-height: 1.6;
 }
 
+h1 {
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+
 /* Make sections take up full screen height */
 .descr,
 .form-section {
@@ -35,11 +41,42 @@ html {
 /* Header */
 header {
     background-color: #fff;
+    /* Normal background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 10;
     position: relative;
-    /* Positioning container for absolute positioning of nav */
     padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+}
+
+/* Sticky Header Style */
+header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* When the header is sticky, change the color of nav links */
+header.sticky nav ul li a {
+    color: white;
+}
+
+header.sticky nav ul li a:hover {
+    color: #ccc;
+    /* Optional: lighter gray when hovered */
+}
+
+header.sticky .logo {
+    color: white;
+}
+
+header.sticky .logo:hover {
+    color: #ccc;
 }
 
 .nav-container {
@@ -61,13 +98,10 @@ nav ul {
     gap: 15px;
     list-style: none;
     position: absolute;
-    /* Positioning it over the logo */
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    /* Vertically center the nav items */
     margin: 0;
-    /* Remove default margin */
 }
 
 nav ul li {
@@ -91,6 +125,10 @@ nav ul li a:hover {
     font-size: 2rem;
     cursor: pointer;
     color: #333;
+}
+
+header.sticky .hamburger {
+    color: white;
 }
 
 /* Main Content */
@@ -149,13 +187,15 @@ form button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
-    /* Space between text and image */
+    gap: 80px;
     text-align: left;
-    /* Keep text left-aligned */
     padding: 0 40px;
     flex-direction: column;
-    /* Default to vertical stacking for small screens */
+    margin-top: 30px;
+}
+
+.descr .text-content {
+    margin-top: 40px;
 }
 
 /* Title and List Styling */
@@ -167,8 +207,17 @@ form button:hover {
 /* List Styling */
 .descr ul {
     margin-top: 15px;
-    list-style: disc;
+    list-style: none;
     padding-left: 20px;
+}
+
+.descr ul li {
+    background-image: url('point.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 0 5px;
+    padding-left: 25px;
+    margin-bottom: 10px;
 }
 
 /* Image Styling */
@@ -253,6 +302,10 @@ form button:hover {
         display: block;
     }
 
+    .header.sticky .hamburger {
+        color: white;
+    }
+
     /* Slide the menu in by changing transform */
     nav ul.show {
         transform: translateX(0);
@@ -260,9 +313,8 @@ form button:hover {
 
     .descr {
         flex-direction: column;
-        /* Stack text and image vertically on mobile */
         text-align: center;
-        /* Center-align text on mobile */
+        gap: 20px;
     }
 
     .descr img {
@@ -270,5 +322,13 @@ form button:hover {
         /* Smaller image size for mobile */
         margin-top: 20px;
         /* Add space above image */
+    }
+
+    .descr .text-content {
+        margin-top: 40px;
+    }
+
+    header.sticky nav ul li a {
+        color: black;
     }
 }
