@@ -190,6 +190,7 @@ form button {
     padding: 15px;
     border-radius: 8px;
     border-color: black;
+    background-color: white;
 }
 
 .text-content button:hover {
@@ -489,7 +490,8 @@ form button:hover {
         flex-direction: column;
         text-align: center;
         gap: 20px;
-        margin-bottom: 100px;
+        margin-bottom: 150px;
+        margin-top: 70px;
     }
 
     .descr img {
