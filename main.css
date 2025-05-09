@@ -191,6 +191,7 @@ form button {
     border-radius: 8px;
     border-color: black;
     background-color: white;
+    color: black;
 }
 
 .text-content button:hover {
@@ -295,6 +296,8 @@ form button:hover {
     width: 100%;
     border-radius: 8px;
     border-color: black;
+    background-color: white;
+    color: black;
 }
 
 .facts-content button:hover {
