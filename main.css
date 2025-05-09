@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Orbitron;
+    font-family: Orbitron, sans-serif;
 }
 
 body {
@@ -11,7 +11,19 @@ body {
     background-color: black;
     color: white;
     line-height: 1.6;
+    overflow-x: hidden;
 }
+
+header,
+nav ul {
+    max-width: 100vw;
+}
+
+header,
+nav ul {
+    max-width: 100vw;
+}
+
 
 h1 {
     background-color: white;
@@ -21,7 +33,8 @@ h1 {
 
 /* Make sections take up full screen height */
 .descr,
-.form-section {
+.form-section,
+.facts {
     height: 100vh;
     /* 100% of the viewport height */
     display: flex;
@@ -41,13 +54,14 @@ html {
 /* Header */
 header {
     background-color: #fff;
-    /* Normal background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 10;
     position: relative;
     padding: 10px 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
     transition: background-color 0.3s ease;
-    /* Smooth transition */
 }
 
 /* Sticky Header Style */
@@ -67,16 +81,11 @@ header.sticky nav ul li a {
 }
 
 header.sticky nav ul li a:hover {
-    color: #ccc;
-    /* Optional: lighter gray when hovered */
+    color: #9D69A3;
 }
 
 header.sticky .logo {
     color: white;
-}
-
-header.sticky .logo:hover {
-    color: #ccc;
 }
 
 .nav-container {
@@ -116,7 +125,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: rgb(79, 72, 72);
+    color: #9D69A3;
 }
 
 /* Hamburger Icon */
@@ -133,9 +142,9 @@ header.sticky .hamburger {
 
 /* Main Content */
 main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Form Styling */
@@ -175,6 +184,17 @@ form button {
     font-size: 1rem;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+.text-content button {
+    padding: 15px;
+    border-radius: 8px;
+    border-color: black;
+}
+
+.text-content button:hover {
+    background-color: #9D69A3;
+    color: white;
 }
 
 form button:hover {
@@ -233,6 +253,149 @@ form button:hover {
     transform: scale(1.05);
 }
 
+/*Facts Section*/
+.facts {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.facts-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* List Styling */
+.facts ul {
+    margin-top: 15px;
+    list-style: none;
+}
+
+.facts ul li {
+    background-image: url('point.png');
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: 0 5px;
+    padding-left: 40px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.facts-content button {
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    border-color: black;
+}
+
+.facts-content button:hover {
+    background-color: #9D69A3;
+    color: white;
+}
+
+.facts img {
+    width: 300px;
+    height: auto;
+    border-radius: 6px;
+    transition: opacity 1s ease, transform 1s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    z-index: -1;
+    margin: 0 auto;
+}
+
+.facts img.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.left-image {
+    margin-left: 0;
+}
+
+.right-image {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #111;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: #9D69A3;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #9D69A3;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-icons a img {
+    width: 70px;
+    margin: 10px;
+    transition: filter 0.3s;
+}
+
+.social-icons a img:hover {
+    filter: grayscale(0%);
+}
+
+.footer-bottom-text {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+
 /* Desktop Styles */
 @media (min-width: 768px) {
     .descr {
@@ -260,22 +423,33 @@ form button:hover {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        max-width: 100vw;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+
     nav ul {
         flex-direction: column;
-        background-color: white;
         position: fixed;
-        top: 0;
         right: 0;
-        transform: translateX(100%);
-        /* Ensure the menu starts off-screen */
+        top: 0;
         height: 100vh;
         width: 200px;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+        transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
-        /* Use transform for smooth sliding */
+        background-color: white;
         z-index: 1000;
         padding-top: 50px;
-        /* Space for the hamburger icon */
+        max-width: 100vw;
     }
 
     nav ul li {
@@ -315,13 +489,13 @@ form button:hover {
         flex-direction: column;
         text-align: center;
         gap: 20px;
+        margin-bottom: 100px;
     }
 
     .descr img {
         width: 300px;
-        /* Smaller image size for mobile */
-        margin-top: 20px;
-        /* Add space above image */
+        margin-top: 60px;
+        order: -1;
     }
 
     .descr .text-content {
@@ -330,5 +504,29 @@ form button:hover {
 
     header.sticky nav ul li a {
         color: black;
+    }
+
+    .facts {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .left-image,
+    .right-image {
+        margin-bottom: 20px;
+    }
+
+    .facts-content {
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .facts img {
+        width: 300px;
     }
 }
