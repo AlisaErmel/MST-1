@@ -101,6 +101,14 @@ header.sticky .logo {
     color: #333;
 }
 
+a,
+a:hover,
+a:focus,
+a:visited {
+    text-decoration: none !important;
+}
+
+
 /* Navigation - Positioning links to the right */
 nav ul {
     display: flex;
