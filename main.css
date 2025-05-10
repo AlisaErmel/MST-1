@@ -158,6 +158,18 @@ form {
     color: black;
 }
 
+.form-section {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)),
+        url('hp4.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: darken;
+    transition: background 1s ease-in-out;
+}
+
 form input[type="text"],
 form input[type="email"] {
     width: 100%;
@@ -438,7 +450,11 @@ form button:hover {
     }
 
     .form-section {
+        margin-top: 40px;
         padding: 20px;
+        background-position: center;
+        background-size: cover;
+        background-attachment: scroll;
     }
 
     nav ul {
