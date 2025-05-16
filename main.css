@@ -36,14 +36,12 @@ h1 {
 .form-section,
 .facts {
     height: 100vh;
-    /* 100% of the viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     scroll-snap-align: start;
-    /* Optional: for smooth scrolling effect */
 }
 
 /* Optional smooth scroll for nicer UX */
@@ -123,7 +121,6 @@ nav ul {
 
 nav ul li {
     padding: 10px 20px;
-    /* Equal padding on top and bottom */
 }
 
 nav ul li a {
@@ -430,9 +427,7 @@ form button:hover {
     .descr img {
         width: 50%;
         height: 100%;
-        /* Full viewport height */
         object-fit: cover;
-        /* Ensure it covers without distortion */
         border-radius: 15px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         transition: transform 0.4s ease, box-shadow 0.4s ease;
