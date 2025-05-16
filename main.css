@@ -297,7 +297,7 @@ form button:hover {
 }
 
 .descr ul li {
-    background-image: url('hp.png');
+    background-image: url('point.png');
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: 0 5px;
@@ -345,7 +345,7 @@ form button:hover {
 }
 
 .facts ul li {
-    background-image: url('hp.png');
+    background-image: url('point.png');
     background-size: 30px 30px;
     background-repeat: no-repeat;
     background-position: 0 5px;
