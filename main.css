@@ -8,11 +8,39 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(7, 7, 7);
-    color: white;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
 }
+
+[data-theme="dark"] {
+    --bg-color: rgb(7, 7, 7);
+    --text-color: white;
+}
+
+[data-theme="light"] {
+    --bg-color: white;
+    --text-color: rgb(7, 7, 7);
+}
+
+/* Toggle Button Styling */
+#theme-toggle {
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#theme-toggle img {
+    transition: transform 0.3s;
+}
+
+[data-theme="dark"] #theme-toggle img {
+    transform: rotate(360deg);
+}
+
 
 header,
 nav ul {
@@ -58,6 +86,7 @@ header {
     padding: 10px 20px;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     transition: background-color 0.3s ease;
 }
@@ -91,6 +120,15 @@ header.sticky .logo {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    gap: 20px;
+}
+
+.start {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    gap: 20px;
 }
 
 .logo {
@@ -121,6 +159,8 @@ nav ul {
 
 nav ul li {
     padding: 10px 20px;
+    color: #333;
+    font-weight: bold;
 }
 
 nav ul li a {
