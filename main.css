@@ -21,6 +21,11 @@ body {
     --h1-bg-color: white;
     --h1-color: black;
     --button-bg-color: white;
+    --form-bg-img: linear-gradient(rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)),
+        url('hp4.webp');
+    --footer-bg-color: black;
+    --footer-color: white;
 }
 
 [data-theme="light"] {
@@ -29,6 +34,9 @@ body {
     --h1-bg-color: black;
     --h1-color: white;
     --button-bg-color: black;
+    --form-bg-img: url('hp5.webp');
+    --footer-bg-color: white;
+    --footer-color: black;
 }
 
 /* Toggle Button Styling */
@@ -211,10 +219,8 @@ form {
 
 .form-section {
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.6)),
-        url('hp4.webp');
-    background-size: cover;
+    background-image: var(--form-bg-img);
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-blend-mode: darken;
@@ -396,8 +402,8 @@ form button:hover {
 
 /* Footer Styling */
 .footer {
-    background-color: #111;
-    color: white;
+    background-color: var(--footer-bg-color);
+    color: var(--footer-color);
     padding: 40px 20px;
     text-align: center;
 }
@@ -431,7 +437,7 @@ form button:hover {
 }
 
 .footer-section ul li a {
-    color: white;
+    color: var(--footer-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
