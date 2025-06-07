@@ -220,7 +220,7 @@ form {
 .form-section {
     position: relative;
     background-image: var(--form-bg-img);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-blend-mode: darken;
